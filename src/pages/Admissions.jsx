@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Admissions() {
   return (
     <div className="container-wide py-12 md:py-16">
