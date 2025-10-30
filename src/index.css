@@ -1,0 +1,52 @@
+@import "tailwindcss";
+ 
+/* Global theme tokens for classical Indian feel */
+:root {
+  --brand-bg: #fffaf0;
+  --brand-primary: #8b5e34; /* bronze */
+  --brand-accent: #b08968; /* sand */
+  --brand-dark: #3b2f2f;
+  --surface-bg: rgba(255, 255, 255, 0.7);
+  --surface-border: rgba(176, 137, 104, 0.4);
+}
+
+[data-theme="dark"] {
+  --brand-bg: #0f172a; /* slate-900 */
+  --brand-primary: #d1a35b; /* warm gold */
+  --brand-accent: #8b6b53; /* muted sand */
+  --brand-dark: #e5e7eb; /* text */
+  --surface-bg: rgba(255, 255, 255, 0.06);
+  --surface-border: rgba(209, 163, 91, 0.3);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-[var(--brand-bg)] text-[var(--brand-dark)] antialiased;
+}
+
+.theme-transition * {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.container-wide {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-[var(--brand-primary)] px-5 py-2.5 text-white shadow hover:bg-[oklch(39%_0.07_60)] transition;
+}
+
+.surface {
+  background-color: var(--surface-bg);
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight text-[var(--brand-dark)];
+}
+
+.subtitle {
+  @apply text-[var(--brand-primary)] font-medium;
+}
